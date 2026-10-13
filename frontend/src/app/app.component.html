@@ -1,61 +1,93 @@
 <main class="page-shell">
-  <header class="topbar">
-    <a class="brand" href="/" aria-label="Pokémon Explorer home">
-      <span class="brand-mark" aria-hidden="true">P</span>
-      <span>Poké<span class="brand-light">dex</span></span>
-    </a>
-    <span class="topbar-note"><span class="live-dot"></span> Your field guide</span>
-  </header>
+    <header class="topbar">
+        <a class="brand" href="/" aria-label="Pokémon Explorer home">
+            <span class="brand-mark" aria-hidden="true">P</span>
+            <span>Poké<span class="brand-light">dex</span></span>
+        </a>
+        <span class="topbar-note"
+            ><span class="live-dot"></span> Your field guide</span
+        >
+    </header>
 
-  <section class="hero" aria-labelledby="page-title">
-    <div class="hero-copy">
-      <p class="eyebrow">THE WORLD OF POKÉMON</p>
-      <h1 id="page-title">Meet your next<br><span>favorite.</span></h1>
-      <p class="hero-description">A little field guide to the remarkable creatures out there. Start exploring.</p>
-    </div>
-    <div class="hero-art" aria-hidden="true">
-      <div class="orbit orbit-one"></div>
-      <div class="orbit orbit-two"></div>
-      <div class="hero-ball"><span></span></div>
-      <span class="spark spark-one">✦</span>
-      <span class="spark spark-two">✳</span>
-      <span class="hero-caption">NO. 001<br>KANTO REGION</span>
-    </div>
-  </section>
+    <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+            <p class="eyebrow">THE WORLD OF POKÉMON</p>
+            <h1 id="page-title">Meet your next<br /><span>favorite.</span></h1>
+            <p class="hero-description">
+                A little field guide to the remarkable creatures out there.
+                Start exploring.
+            </p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="hero-ball"><span></span></div>
+            <span class="spark spark-one">✦</span>
+            <span class="spark spark-two">✳</span>
+            <span class="hero-caption">NO. 001<br />KANTO REGION</span>
+        </div>
+    </section>
 
-  <section class="collection" aria-labelledby="collection-title">
-    <div class="collection-heading">
-      <div>
-        <p class="eyebrow">YOUR COLLECTION</p>
-        <h2 id="collection-title">First discoveries</h2>
-      </div>
-      @if (!loading() && !error() && pokemon().length > 0) {
-        <span class="collection-count">{{ pokemon().length }} shown <span class="count-divider">/</span> {{ count() }} total</span>
-      }
-    </div>
+    <section
+        class="collection"
+        data-testid="pokemon-list"
+        aria-labelledby="collection-title"
+    >
+        <div class="collection-heading">
+            <div>
+                <p class="eyebrow">YOUR COLLECTION</p>
+                <h2 id="collection-title">First discoveries</h2>
+            </div>
+            @if (!loading() && !error() && pokemon().length > 0) {
+                <span class="collection-count"
+                    >{{ pokemon().length }} shown
+                    <span class="count-divider">/</span>
+                    {{ count() }} total</span
+                >
+            }
+        </div>
 
-    @if (loading()) {
-      <p class="state-card" role="status"><span class="spinner" aria-hidden="true"></span>Loading Pokémon...</p>
-    } @else if (error()) {
-      <p class="state-card error-state" role="alert">We couldn't reach the Pokédex right now. Please try again in a moment.</p>
-    } @else if (pokemon().length === 0) {
-      <p class="state-card" role="status">No Pokémon found. Check back after your next adventure.</p>
-    } @else {
-      <ul class="pokemon-grid" aria-label="Pokémon">
-        @for (item of pokemon(); track item.id ?? item.name) {
-          <li class="pokemon-card">
-            <span class="pokemon-id">#{{ item.id === null ? '???' : (item.id | number) }}</span>
-            <span class="pokemon-ball" aria-hidden="true"><span></span></span>
-            <span class="pokemon-name">{{ item.name }}</span>
-            <span class="card-arrow" aria-hidden="true">↗</span>
-          </li>
+        @if (loading()) {
+            <p class="state-card" role="status">
+                <span class="spinner" aria-hidden="true"></span>Loading
+                Pokémon...
+            </p>
+        } @else if (error()) {
+            <p class="state-card error-state" role="alert">
+                We couldn't reach the Pokédex right now. Please try again in a
+                moment.
+            </p>
+        } @else if (pokemon().length === 0) {
+            <p class="state-card" role="status">
+                No Pokémon found. Check back after your next adventure.
+            </p>
+        } @else {
+            <ul class="pokemon-grid" aria-label="Pokémon">
+                @for (item of pokemon(); track item.id ?? item.name) {
+                    <li class="pokemon-card">
+                        <span class="pokemon-id"
+                            >#{{
+                                item.id === null ? '???' : (item.id | number)
+                            }}</span
+                        >
+                        <span class="pokemon-ball" aria-hidden="true"
+                            ><span></span
+                        ></span>
+                        <span class="pokemon-name">{{ item.name }}</span>
+                        <span class="card-arrow" aria-hidden="true">↗</span>
+                    </li>
+                }
+            </ul>
         }
-      </ul>
-    }
-  </section>
+    </section>
 
-  <footer class="footer">
-    <span>Made for curious trainers.</span>
-    <span>Data from <a href="https://pokeapi.co/" target="_blank" rel="noreferrer">PokéAPI</a></span>
-  </footer>
+    <footer class="footer">
+        <span>Made for curious trainers.</span>
+        <span
+            >Data from
+            <a href="https://pokeapi.co/" target="_blank" rel="noreferrer"
+                >PokéAPI</a
+            ></span
+        >
+    </footer>
 </main>

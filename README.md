@@ -48,6 +48,8 @@ npm run test:e2e
 
 The Playwright dev server only serves the frontend; tests intercept `/api/pokemon` and load fixtures from `testfixtures`. xUnit supplies raw PokéAPI response fixtures through a fake HTTP handler. Fixture files are test-only and are not read by production code.
 
+Each Playwright test captures a screenshot after it finishes and compares it with its checked-in baseline. To intentionally update baselines after a visual change, run `npm run test:e2e -- --update-snapshots` from `frontend` and review the changed images.
+
 ## Project layout
 
 - `frontend/` — standalone Angular app and Playwright end-to-end tests
