@@ -1,0 +1,18 @@
+# .NET
+**/bin/
+**/obj/
+
+# Angular and Node
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+
+# Playwright
+frontend/playwright-report/
+frontend/test-results/
+
+# IDE and local configuration
+.vs/
+.vscode/
+*.user
+*.suo

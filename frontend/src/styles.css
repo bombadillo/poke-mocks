@@ -1,0 +1,81 @@
+:root {
+  color-scheme: light;
+  font-family: "DM Sans", sans-serif;
+  color: #1e2933;
+  background: #f7f5ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+
+* { box-sizing: border-box; }
+body { min-width: 320px; margin: 0; }
+a { color: inherit; }
+
+.page-shell { width: min(1100px, calc(100% - 64px)); margin: 0 auto; }
+.topbar { height: 82px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e7e3d9; }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-family: "Space Grotesk", sans-serif; font-size: 19px; font-weight: 700; letter-spacing: -1px; }
+.brand-mark { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 50%; background: #ee6853; color: #fff; font-size: 16px; }
+.brand-light { color: #ee6853; }
+.topbar-note { display: flex; align-items: center; gap: 9px; color: #69747a; font-size: 12px; font-weight: 600; }
+.live-dot { width: 7px; height: 7px; border-radius: 50%; background: #79aa75; box-shadow: 0 0 0 4px #79aa7520; }
+
+.hero { position: relative; display: flex; min-height: 345px; align-items: center; overflow: hidden; }
+.hero-copy { z-index: 1; max-width: 510px; padding: 46px 0 56px; }
+.eyebrow { margin: 0 0 14px; color: #92948b; font-size: 10px; font-weight: 700; letter-spacing: 1.8px; }
+h1, h2 { font-family: "Space Grotesk", sans-serif; letter-spacing: -2px; }
+h1 { margin: 0; font-size: clamp(46px, 6vw, 68px); line-height: .99; }
+h1 span { color: #ee6853; }
+.hero-description { max-width: 330px; margin: 19px 0 0; color: #758087; font-size: 14px; line-height: 1.8; }
+.hero-art { position: absolute; top: 0; right: 2%; width: 420px; height: 345px; }
+.hero-ball { position: absolute; top: 61px; left: 104px; width: 220px; height: 220px; overflow: hidden; border: 10px solid #fff; border-radius: 50%; background: linear-gradient(#ee6853 0 47%, #27343b 47% 53%, #fff 53%); box-shadow: 0 23px 50px #baaa9438, inset 0 0 0 1px #26343a15; transform: rotate(-17deg); }
+.hero-ball::after { position: absolute; top: 50%; left: 50%; width: 61px; height: 61px; border: 9px solid #27343b; border-radius: 50%; background: #fff; content: ""; transform: translate(-50%, -50%); }
+.hero-ball span { position: absolute; z-index: 1; top: 50%; left: 50%; width: 23px; height: 23px; border: 3px solid #27343b; border-radius: 50%; background: #fff; transform: translate(-50%, -50%); }
+.orbit { position: absolute; border: 1px solid #dcd6c8; border-radius: 50%; transform: rotate(-26deg); }
+.orbit-one { top: 62px; left: 44px; width: 340px; height: 220px; }
+.orbit-two { top: 35px; left: 102px; width: 260px; height: 285px; transform: rotate(32deg); }
+.spark { position: absolute; color: #d5a94e; }
+.spark-one { top: 76px; right: 45px; font-size: 25px; }
+.spark-two { bottom: 67px; left: 70px; font-size: 21px; }
+.hero-caption { position: absolute; right: 5px; bottom: 53px; color: #a5a196; font-size: 9px; font-weight: 700; letter-spacing: 1px; line-height: 1.7; }
+
+.collection { padding: 36px 0 48px; border-top: 1px solid #e7e3d9; }
+.collection-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 22px; }
+.collection-heading .eyebrow { margin-bottom: 8px; }
+h2 { margin: 0; font-size: 25px; letter-spacing: -1px; }
+.collection-count { padding-bottom: 3px; color: #858a87; font-size: 12px; }
+.count-divider { padding: 0 5px; color: #c8c4b9; }
+.pokemon-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; margin: 0; padding: 0; list-style: none; }
+.pokemon-card { position: relative; display: flex; min-height: 144px; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; border: 1px solid #eae6dd; border-radius: 12px; background: #fffefa; transition: border-color .2s, transform .2s, box-shadow .2s; }
+.pokemon-card:hover { transform: translateY(-3px); border-color: #edb1a4; box-shadow: 0 10px 25px #39382b0b; }
+.pokemon-id { position: absolute; top: 14px; left: 16px; color: #b1b0a8; font-size: 10px; font-weight: 600; }
+.pokemon-ball { position: relative; width: 37px; height: 37px; margin-bottom: 12px; overflow: hidden; border: 1px solid #e5e1d8; border-radius: 50%; background: linear-gradient(#f18a74 0 45%, #37434a 45% 55%, #fff 55%); }
+.pokemon-ball::after { position: absolute; top: 50%; left: 50%; width: 11px; height: 11px; border: 2px solid #37434a; border-radius: 50%; background: #fff; content: ""; transform: translate(-50%, -50%); }
+.pokemon-name { color: #26323a; font-family: "Space Grotesk", sans-serif; font-size: 15px; font-weight: 600; text-transform: capitalize; }
+.card-arrow { position: absolute; right: 14px; bottom: 12px; color: #c7c2b7; font-size: 13px; }
+.state-card { display: flex; min-height: 100px; align-items: center; justify-content: center; gap: 12px; margin: 0; border: 1px dashed #ded9cd; border-radius: 12px; color: #777d7b; font-size: 13px; text-align: center; }
+.error-state { border-color: #edc6bd; color: #a74e42; }
+.spinner { width: 16px; height: 16px; border: 2px solid #eadbd4; border-top-color: #ee6853; border-radius: 50%; animation: spin .7s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.footer { display: flex; justify-content: space-between; padding: 18px 0 28px; border-top: 1px solid #e7e3d9; color: #a09f95; font-size: 11px; }
+.footer a { color: #777c75; text-decoration-color: #d5cfc0; text-underline-offset: 3px; }
+
+@media (max-width: 720px) {
+  .page-shell { width: min(100% - 36px, 540px); }
+  .hero { min-height: 480px; align-items: start; }
+  .hero-copy { padding-top: 44px; }
+  .hero-art { top: 180px; right: -56px; transform: scale(.78); transform-origin: top right; }
+  .hero-description { max-width: 280px; }
+  .collection { padding-top: 28px; }
+  .pokemon-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 400px) {
+  .topbar-note { font-size: 11px; }
+  .hero-art { right: -86px; transform: scale(.67); }
+  .collection-heading { align-items: start; gap: 10px; }
+  .collection-count { padding-top: 19px; text-align: right; }
+}
